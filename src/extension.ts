@@ -2,7 +2,7 @@ import * as vscode from 'vscode'
 import * as path from 'path'
 import * as fs from 'fs'
 import * as pug from 'pug'
-import { SECTIONS } from './content';
+import { SECTIONS } from './content'
 const CONDA_CHEATSHEET_URL: string = 'https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html'
 
 export function activate (context: vscode.ExtensionContext) {
@@ -85,8 +85,8 @@ export function activate (context: vscode.ExtensionContext) {
             const message = `Copied: ${code}`
             vscode.window.setStatusBarMessage(message)
           }, () => {
-            vscode.window.showErrorMessage('Copy to clipboard failed');
-          });
+            vscode.window.showErrorMessage('Copy to clipboard failed')
+          })
       },
       undefined,
       context.subscriptions
