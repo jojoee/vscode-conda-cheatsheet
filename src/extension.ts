@@ -82,7 +82,8 @@ export function activate (context: vscode.ExtensionContext) {
       (code: string) => {
         vscode.env.clipboard.writeText(code)
           .then(() => {
-            vscode.window.showInformationMessage(`Copied: ${code}`)
+            const message = `Copied: ${code}`
+            vscode.window.setStatusBarMessage(message)
           }, () => {
             vscode.window.showErrorMessage('Copy to clipboard failed');
           });
