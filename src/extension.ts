@@ -1,25 +1,35 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
+import * as path from 'path'
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate (context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
   console.log('Congratulations, your extension "conda-cheatsheet" is now active!')
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  const disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-    // The code you place here will be executed every time your command is executed
+  const pdfDisposable = vscode.commands.registerCommand('extension.openPdf', () => {
+    // set panel
+    const assetPath = path.join(context.extensionPath, 'asset')
+    const fileNames = [
+      'conda-cheatsheet-4.6-1.jpg',
+      'conda-cheatsheet-4.6-2.jpg'
+    ]
+    const panel = vscode.window.createWebviewPanel(
+      'condaCheatsheetPdf',
+      'Conda Cheatsheet PDF',
+      vscode.ViewColumn.Beside, {
+        localResourceRoots: [vscode.Uri.file(assetPath)],
+        enableScripts: false
+      }
+    )
 
-    // Display a message box to the user
-    vscode.window.showInformationMessage('Hello World!')
+    // set content
+    let html: string = ''
+    for (const fileName of fileNames) {
+      const filePath = vscode.Uri.file(path.join(assetPath, fileName)).with({ scheme: 'vscode-resource' })
+      html += `<img src="${filePath}" />`
+    }
+    panel.webview.html = html
   })
 
-  context.subscriptions.push(disposable)
+  context.subscriptions.push(pdfDisposable)
 }
 
 // this method is called when your extension is deactivated
