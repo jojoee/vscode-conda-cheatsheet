@@ -2,25 +2,32 @@
   "name": "conda-cheatsheet",
   "displayName": "Conda Cheatsheet",
   "description": "Open Conda cheatsheet inside the editor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.42.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Programming Languages"
   ],
   "activationEvents": [
-    "onCommand:extension.openPdf",
+    "onCommand:extension.openPdf"
   ],
   "main": "./out/extension.js",
+  "license": "MIT",
   "contributes": {
     "commands": [
       {
         "command": "extension.openPdf",
         "title": "Conda Cheatsheet: PDF"
-      },
+      }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jojoee/vscode-conda-cheatsheet"
+  },
+  "publisher": "jojoee",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

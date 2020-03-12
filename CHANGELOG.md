@@ -4,6 +4,5 @@ All notable changes to the "conda-cheatsheet" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
-
+## [1.0.0]
 - Initial release
