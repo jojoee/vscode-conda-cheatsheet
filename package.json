@@ -2,7 +2,7 @@
   "name": "conda-cheatsheet",
   "displayName": "Conda Cheatsheet",
   "description": "Open Conda cheatsheet inside the editor",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "engines": {
     "vscode": "^1.42.0"
   },
@@ -64,10 +64,9 @@
     "eslint-plugin-standard": "^4.0.1",
     "glob": "^7.1.6",
     "mocha": "^7.0.1",
+    "pug": "^2.0.4",
     "typescript": "^3.7.5",
     "vscode-test": "^1.3.0"
   },
-  "dependencies": {
-    "pug": "^2.0.4"
-  }
+  "dependencies": {}
 }

@@ -1,3 +1,6 @@
+const pug = require('pug')
+const fs = require('fs')
+
 let sections = [{
   name: 'Getting Started',
   commands: [
@@ -156,4 +159,15 @@ sections = sections.map(section => {
   }
 })
 
-export const SECTIONS = sections
+const compiledFunction = pug.compileFile('./tool/template.pug', {
+  pretty: true
+})
+const html = compiledFunction({
+  title: 'Conda Cheatsheet',
+  sections
+})
+
+// save
+const outputFilePath = './asset/index.html'
+fs.writeFileSync(outputFilePath, html)
+console.log(`Compile to: ${outputFilePath}`)

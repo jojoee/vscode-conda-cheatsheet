@@ -1,8 +1,6 @@
 import * as vscode from 'vscode'
 import * as path from 'path'
 import * as fs from 'fs'
-import * as pug from 'pug'
-import { SECTIONS } from './content'
 const CONDA_CHEATSHEET_URL: string = 'https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html'
 
 export function activate (context: vscode.ExtensionContext) {
@@ -51,7 +49,7 @@ export function activate (context: vscode.ExtensionContext) {
     panel.webview.html = html
   })
 
-  const webviewDisposable = vscode.commands.registerCommand('extension.openWebview', async () => {
+  const webviewDisposable = vscode.commands.registerCommand('extension.openWebview', () => {
     // set panel
     const assetPath = path.join(context.extensionPath, 'asset')
     const panel = vscode.window.createWebviewPanel(
@@ -66,15 +64,11 @@ export function activate (context: vscode.ExtensionContext) {
     // set content
     const styleFilePath = vscode.Uri.file(path.join(assetPath, 'custom.css')).with({ scheme: 'vscode-resource' })
     const scriptFilePath = vscode.Uri.file(path.join(assetPath, 'main.js')).with({ scheme: 'vscode-resource' })
-    const templateFilePath = path.join(assetPath, 'template.pug')
-    const templateString = await fs.readFileSync(templateFilePath, 'utf8')
-    const html = pug.compile(templateString)({
-      title: 'Conda Cheatsheet',
-      cspSource: panel.webview.cspSource.toString(),
-      styleFilePath: styleFilePath.toString(),
-      scriptFilePath: scriptFilePath.toString(),
-      sections: SECTIONS
-    })
+    const htmlFilePath = path.join(assetPath, 'index.html')
+    let html = fs.readFileSync(htmlFilePath, 'utf8')
+    html = html.replace(/cspSource/g, panel.webview.cspSource.toString())
+    html = html.replace('styleFilePath', styleFilePath.toString())
+    html = html.replace('scriptFilePath', scriptFilePath.toString())
     panel.webview.html = html
 
     // listener, copy code

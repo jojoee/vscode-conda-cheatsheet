@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src cspSource; script-src cspSource">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conda Cheatsheet</title>
+  <link rel="stylesheet" href="styleFilePath">
+</head>
+<body>
+  <h1>Conda Cheatsheet</h1>
+  <nav>
+    <ul>
+      <li><a href="#getting-started" title="Getting Started">Getting Started</a></li>
+      <li><a href="#working-with-environments" title="Working with Environments">Working with Environments</a></li>
+      <li><a href="#sharing-environments" title="Sharing Environments">Sharing Environments</a></li>
+      <li><a href="#using-packages-and-channels" title="Using Packages and Channels">Using Packages and Channels</a></li>
+      <li><a href="#additional-useful-hints" title="Additional Useful Hints">Additional Useful Hints</a></li>
+    </ul>
+  </nav>
+  <div class="sections">
+    <div class="section">
+      <div class="breaker"></div>
+      <h2 id="getting-started">Getting Started</h2>
+      <div class="command"><span>Verify Conda is installed, check version number</span>
+        <pre>conda info</pre>
+      </div>
+      <div class="command"><span>Update Conda to the current version</span>
+        <pre>conda update -n base conda</pre>
+      </div>
+      <div class="command"><span>Update all packages to teh latest version of Anaconda. Will install stable and compatible versions, not necessarily the very latest.</span>
+        <pre>conda update anaconda</pre>
+      </div>
+    </div>
+    <div class="section">
+      <div class="breaker"></div>
+      <h2 id="working-with-environments">Working with Environments</h2>
+      <div class="command"><span>Create a new environment named ENVNAME with specific version of Python and packages installed.</span>
+        <pre>conda create --name &lt;ENVNAME&gt; python=3.6 &quot;PKG1&gt;7.6&quot; PKG2</pre>
+      </div>
+      <div class="command"><span>Activate a named Conda environment</span>
+        <pre>conda activate ENVNAME</pre>
+      </div>
+      <div class="command"><span>Activate a Conda environment at particular location on disk</span>
+        <pre>conda activate /path/to/environment-dir</pre>
+      </div>
+      <div class="command"><span>Deactivate current environment</span>
+        <pre>conda deactivate</pre>
+      </div>
+      <div class="command"><span>List all packages and versions in the active environment</span>
+        <pre>conda list</pre>
+      </div>
+      <div class="command"><span>List all packages and versions in the named environment</span>
+        <pre>conda list --name ENVNAME</pre>
+      </div>
+      <div class="command"><span>List all revisions made within the active environment</span>
+        <pre>conda list --revisions</pre>
+      </div>
+      <div class="command"><span>List all revisions made in a specified environment</span>
+        <pre>conda list --name ENVNAME --revisions</pre>
+      </div>
+      <div class="command"><span>Delete an entire environment</span>
+        <pre>conda remove --name ENVNAME --all</pre>
+      </div>
+    </div>
+    <div class="section">
+      <div class="breaker"></div>
+      <h2 id="sharing-environments">Sharing Environments</h2>
+      <div class="command"><span>Make an exact copy of an environment</span>
+        <pre>conda create --clone ENVNAME --name NEWENV</pre>
+      </div>
+      <div class="command"><span>Export an environment to a YAML file that can be read on Windows, macOS, and Linux</span>
+        <pre>conda env export --name ENVNAME &gt; envname.yml</pre>
+      </div>
+      <div class="command"><span>Create an environment from YAML file</span>
+        <pre>conda env create --file envname.yml</pre>
+      </div>
+      <div class="command"><span>Create an environment from the file named environment.yml in the current directory</span>
+        <pre>conda env create</pre>
+      </div>
+      <div class="command"><span>Export an environment with exact package version for one OS</span>
+        <pre>conda list --explicit &gt; pkgs.txt</pre>
+      </div>
+      <div class="command"><span>Create an environment based on exact package versions</span>
+        <pre>conda create --name NEWENV --file pkgs.txt</pre>
+      </div>
+    </div>
+    <div class="section">
+      <div class="breaker"></div>
+      <h2 id="using-packages-and-channels">Using Packages and Channels</h2>
+      <div class="command"><span>Search for a package in currently configured channels with version range &gt;=3.1.0, &lt;3.2&quot;</span>
+        <pre>conda search PKGNAME=3.1 &quot;PKGNAME [version='&gt;=3.1.0,&lt;3.2']&quot;</pre>
+      </div>
+      <div class="command"><span>Find a package on all channels using the Anaconda Client</span>
+        <pre>anaconda search FUZZYNAME</pre>
+      </div>
+      <div class="command"><span>Install package from a specific channel</span>
+        <pre>conda install conda-forge::PKGNAME</pre>
+      </div>
+      <div class="command"><span>Install a package by exact version number (3.1.4)</span>
+        <pre>conda install PKGNAME==3.1.4</pre>
+      </div>
+      <div class="command"><span>Install one of the listed versions (OR)</span>
+        <pre>conda install &quot;PKGNAME[version='3.1.2|3.1.4']&quot;</pre>
+      </div>
+      <div class="command"><span>Install following several constraints (AND)</span>
+        <pre>conda install &quot;PKGNAME&gt;2.5,&lt;3.2&quot;</pre>
+      </div>
+      <div class="command"><span>Add a channel to your Conda configuration</span>
+        <pre>conda config --add channels CHANNELNAME</pre>
+      </div>
+    </div>
+    <div class="section">
+      <div class="breaker"></div>
+      <h2 id="additional-useful-hints">Additional Useful Hints</h2>
+      <div class="command"><span>Detailed information about package versions</span>
+        <pre>conda search PKGNAME --info</pre>
+      </div>
+      <div class="command"><span>Remove unused cached files including unused packages</span>
+        <pre>conda clean --all</pre>
+      </div>
+      <div class="command"><span>Remove a package from an environment</span>
+        <pre>conda uninstall PKGNAME --name ENVNAME</pre>
+      </div>
+      <div class="command"><span>Update all packages within an environment</span>
+        <pre>conda update --all --name ENVNAME</pre>
+      </div>
+      <div class="command"><span>Run most commands without requiring a user prompt. Useful for scripts.</span>
+        <pre>conda install --yes PKG1 PKG2</pre>
+      </div>
+      <div class="command"><span>Examine Conda configuration</span>
+        <pre>conda config --show</pre>
+      </div>
+      <div class="command"><span>Examine Conda configuration services</span>
+        <pre>conda config --show-sources</pre>
+      </div>
+    </div>
+  </div>
+  <script src="scriptFilePath"></script>
+</body>

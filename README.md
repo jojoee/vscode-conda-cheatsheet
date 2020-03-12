@@ -15,6 +15,7 @@ Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / `F1` + `Conda Cheatsheet` com
 - [ ] Automated: download pdf => convert to image for `onCommand:extension.openPdf` command
 - [ ] Automated: [Automated publishing](https://code.visualstudio.com/api/working-with-extensions/continuous-integration#automated-publishing)
 - [ ] Automated: test
+- [ ] Automated: watch and run `compileWebVie.js` file
 
 ## Demo
 1. Basic usage + feature
@@ -27,3 +28,8 @@ Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / `F1` + `Conda Cheatsheet` com
 - `alt + V` to pate the command
 2. Support theme changing
 3. Support other view e.g. PDF and website
+
+## Development
+```
+node tool/compileWebVie.js && npm run compile
+```
