@@ -2,7 +2,7 @@
   "name": "conda-cheatsheet",
   "displayName": "Conda Cheatsheet",
   "description": "Open Conda cheatsheet inside the editor",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "engines": {
     "vscode": "^1.42.0"
   },

@@ -4,6 +4,10 @@ All notable changes to the "conda-cheatsheet" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.2.2]
+- Fix and update icon.png
+- Fix the plugin is not working
+
 ## [1.2.1]
 - Add icon file
 - Using `setStatusBarMessage` instead of `showInformationMessage` API
