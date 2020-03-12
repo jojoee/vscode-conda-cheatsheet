@@ -1,0 +1,34 @@
+body {
+  font-family: var(--vscode-editor-font-family);
+  font-size: var(--vscode-editor-font-size);
+}
+
+h2 {
+  padding: 0 8px;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+
+span {
+  padding: 0 8px;
+  display: block;
+}
+
+pre {
+  background-color: var(--vscode-menu-selectionBackground);
+  border-radius: 3px;
+  color: var(--vscode-menu-selectionForeground);
+  font-size: 1rem;
+  padding: 4px 8px;
+  border: 1px solid var(--vscode-menu-selectionBackground);
+  cursor: pointer;
+}
+
+pre:hover {
+  border-color: var(--vscode-menu-selectionForeground);
+}
+
+.breaker {
+  border: 1px solid var(--vscode-menu-selectionForeground);
+  margin: 8px;
+}
