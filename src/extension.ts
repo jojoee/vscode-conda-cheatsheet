@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import * as path from 'path'
+const CONDA_CHEATSHEET_URL: string = 'https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html'
 
 export function activate (context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "conda-cheatsheet" is now active!')
@@ -29,7 +30,26 @@ export function activate (context: vscode.ExtensionContext) {
     panel.webview.html = html
   })
 
+  const websiteDisposable = vscode.commands.registerCommand('extension.openWebsite', () => {
+    // set panel
+    const panel = vscode.window.createWebviewPanel(
+      'condaCheatsheetWebsite',
+      'Conda Cheatsheet Website',
+      vscode.ViewColumn.Beside, {
+        enableScripts: false
+      }
+    )
+
+    // set content
+    const html: string = `
+      <style>html, body { height: 100%; !important }</style>
+      <iframe style="position:relative; width: 100%; height: 100%; border: 0" src="${CONDA_CHEATSHEET_URL} "></iframe>
+    `
+    panel.webview.html = html
+  })
+
   context.subscriptions.push(pdfDisposable)
+  context.subscriptions.push(websiteDisposable)
 }
 
 // this method is called when your extension is deactivated

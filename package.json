@@ -11,7 +11,8 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onCommand:extension.openPdf"
+    "onCommand:extension.openPdf",
+    "onCommand:extension.openWebsite"
   ],
   "main": "./out/extension.js",
   "license": "MIT",
@@ -20,6 +21,10 @@
       {
         "command": "extension.openPdf",
         "title": "Conda Cheatsheet: PDF"
+      },
+      {
+        "command": "extension.openWebsite",
+        "title": "Conda Cheatsheet: Website"
       }
     ]
   },
