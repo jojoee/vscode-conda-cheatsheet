@@ -1,6 +1,11 @@
 # vscode-conda-cheatsheet
 Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / `F1` + `Conda Cheatsheet` command.
 
+![Demo](./asset/screenshot/demo.gif)
+![Support Dark Theme](./asset/screenshot/support-dark-theme.png)
+![Support Light Theme](./asset/screenshot/support-light-theme.png)
+![PDF](./asset/screenshot/pdf.gif)
+
 ## Features
 - `Conda Cheatsheet: PDF` to open PDF file inside editor
 - `Conda Cheatsheet: Website` to open website inside editor
