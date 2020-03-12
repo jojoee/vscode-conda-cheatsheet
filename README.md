@@ -13,6 +13,7 @@ Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / F1 then select `Conda Cheatsh
 - [ ] Automate: download pdf => convert to image for `onCommand:extension.openPdf` command
 - [x] `onCommand:extension.openPdf` command
 - [ ] CI
+- [ ] `.gitignore` should be extended by `.vscodeignore` file
 
 ## Reference
 - x
