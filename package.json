@@ -17,7 +17,7 @@
   ],
   "main": "./out/extension.js",
   "license": "MIT",
-  "icon": "./asset/images/icon.png",
+  "icon": "asset/icon.png",
   "contributes": {
     "commands": [
       {
