@@ -1,0 +1,33 @@
+- var cspSourceVar = cspSource
+- var styleFilePathVar = styleFilePath
+- var scriptFilePathVar = scriptFilePath
+
+doctype html
+head
+  meta(charset='utf-8')
+  meta(
+    http-equiv='Content-Security-Policy'
+    content="default-src 'none'; style-src " + cspSourceVar + "; script-src " + cspSourceVar
+  )
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title #{title}
+  link(rel='stylesheet' href=styleFilePathVar)
+body
+  h1 #{title}
+  nav
+    ul
+      each nav in sections
+        li
+          a(href='#' + nav.href title=nav.name) #{nav.name}
+  
+  div.sections
+    each section in sections
+      div.section
+        .breaker
+        h2(id=section.href) #{section.name}
+        each command in section.commands
+          div.command
+            span #{command.desc}
+            pre #{command.code}
+
+  script(src=scriptFilePathVar)

@@ -1,5 +1,8 @@
 import * as vscode from 'vscode'
 import * as path from 'path'
+import * as fs from 'fs'
+import * as pug from 'pug'
+import { SECTIONS } from './content';
 const CONDA_CHEATSHEET_URL: string = 'https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html'
 
 export function activate (context: vscode.ExtensionContext) {
@@ -48,8 +51,36 @@ export function activate (context: vscode.ExtensionContext) {
     panel.webview.html = html
   })
 
+  const webviewDisposable = vscode.commands.registerCommand('extension.openWebview', async () => {
+    // set panel
+    const assetPath = path.join(context.extensionPath, 'asset')
+    const panel = vscode.window.createWebviewPanel(
+      'condaCheatsheetWebview',
+      'Conda Cheatsheet Webview',
+      vscode.ViewColumn.Beside, {
+        localResourceRoots: [vscode.Uri.file(assetPath)],
+        enableScripts: true
+      }
+    )
+
+    // set content
+    const styleFilePath = vscode.Uri.file(path.join(assetPath, 'custom.css')).with({ scheme: 'vscode-resource' })
+    const scriptFilePath = vscode.Uri.file(path.join(assetPath, 'main.js')).with({ scheme: 'vscode-resource' })
+    const templateFilePath = path.join(assetPath, 'template.pug')
+    const templateString = await fs.readFileSync(templateFilePath, 'utf8')
+    const html = pug.compile(templateString)({
+      title: 'Conda Cheatsheet',
+      cspSource: panel.webview.cspSource.toString(),
+      styleFilePath: styleFilePath.toString(),
+      scriptFilePath: scriptFilePath.toString(),
+      sections: SECTIONS
+    })
+    panel.webview.html = html
+  })
+
   context.subscriptions.push(pdfDisposable)
   context.subscriptions.push(websiteDisposable)
+  context.subscriptions.push(webviewDisposable)
 }
 
 // this method is called when your extension is deactivated
