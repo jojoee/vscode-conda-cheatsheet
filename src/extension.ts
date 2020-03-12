@@ -76,6 +76,20 @@ export function activate (context: vscode.ExtensionContext) {
       sections: SECTIONS
     })
     panel.webview.html = html
+
+    // listener, copy code
+    panel.webview.onDidReceiveMessage(
+      (code: string) => {
+        vscode.env.clipboard.writeText(code)
+          .then(() => {
+            vscode.window.showInformationMessage(`Copied: ${code}`)
+          }, () => {
+            vscode.window.showErrorMessage('Copy to clipboard failed');
+          });
+      },
+      undefined,
+      context.subscriptions
+    )
   })
 
   context.subscriptions.push(pdfDisposable)
