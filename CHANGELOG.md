@@ -4,6 +4,10 @@ All notable changes to the "conda-cheatsheet" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.2.4]
+- Add screenshot files
+- Update readme file
+
 ## [1.2.3]
 - Using pre-compiled template instead of compiling it on-the-fly (for reducing published-extension size)
 

@@ -1,10 +1,14 @@
-# vscode-conda-cheatsheet
-Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / `F1` + `Conda Cheatsheet` command.
+# [Conda Cheatsheet](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
+A Visual Studio Code extension that lets you open Conda cheatsheet inside the editor.
+
+[![Version](https://vsmarketplacebadge.apphb.com/version/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
 
 ![Demo](./asset/screenshot/demo.gif)
 ![Support Dark Theme](./asset/screenshot/support-dark-theme.png)
 ![Support Light Theme](./asset/screenshot/support-light-theme.png)
-![PDF](./asset/screenshot/pdf.gif)
+![PDF](./asset/screenshot/pdf.png)
 
 ## Features
 - `Conda Cheatsheet: PDF` to open PDF file inside editor
@@ -15,12 +19,11 @@ Conda Cheatsheet, `Ctrl+Shift+P` / `Cmd+Shift+P` / `F1` + `Conda Cheatsheet` com
   - Copy and Paste command
 
 ## TODO
-- [ ] Add badges
-- [ ] Add gif animation
 - [ ] Automated: download pdf => convert to image for `onCommand:extension.openPdf` command
 - [ ] Automated: [Automated publishing](https://code.visualstudio.com/api/working-with-extensions/continuous-integration#automated-publishing)
 - [ ] Automated: test
 - [ ] Automated: watch and run `compileWebVie.js` file
+- [ ] Refactoring
 
 ## Demo
 1. Basic usage + feature
