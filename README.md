@@ -20,7 +20,6 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 
 ## TODO
 - [ ] Automated: download pdf => convert to image for `onCommand:extension.openPdf` command
-- [ ] Automated: [Automated publishing](https://code.visualstudio.com/api/working-with-extensions/continuous-integration#automated-publishing)
 - [ ] Automated: test
 - [ ] Automated: watch and run `compileWebVie.js` file
 - [ ] Refactoring
