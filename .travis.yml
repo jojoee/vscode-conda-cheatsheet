@@ -23,6 +23,5 @@ script:
     yarn && yarn compile && yarn test
 after_success:
   - echo ">>> after_success"
-  - echo $PAT
-  - echo $PAT2
+  - yarn deploy
 cache: yarn
