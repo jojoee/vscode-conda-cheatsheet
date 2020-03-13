@@ -40,3 +40,6 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 ```
 node tool/compileWebVie.js && npm run compile
 ```
+
+## Reference
+- [Conda - Conda documentation](https://docs.conda.io/en/latest/)
