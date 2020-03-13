@@ -1,3 +1,6 @@
+env:
+  - PAT2=some-pat
+
 language: node_js
 sudo: false
 os:
@@ -20,4 +23,6 @@ script:
     yarn && yarn compile && yarn test
 after_success:
   - echo ">>> after_success"
+  - echo $PAT
+  - echo $PAT2
 cache: yarn
