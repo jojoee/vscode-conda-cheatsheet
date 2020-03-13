@@ -4,6 +4,9 @@ All notable changes to the "conda-cheatsheet" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.2.7]
+- Downgrade required engine to 1.26.0
+
 ## [1.2.6]
 - Config CI
 
