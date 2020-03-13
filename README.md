@@ -6,9 +6,8 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
 
 ![Demo](./asset/screenshot/demo.gif)
-![Support Dark Theme](./asset/screenshot/support-dark-theme.png)
-![Support Light Theme](./asset/screenshot/support-light-theme.png)
-![PDF](./asset/screenshot/pdf.png)
+![PDF](./asset/screenshot/pdf-768.png)
+![Support Dark and Light Theme](./asset/screenshot/support-dark-and-light-theme-1024.png)
 
 ## Features
 - `Conda Cheatsheet: PDF` to open PDF file inside editor
