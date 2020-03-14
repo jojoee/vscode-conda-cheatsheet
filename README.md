@@ -21,7 +21,7 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 ## TODO
 - [ ] Automated: download pdf => convert to image for `onCommand:extension.openPdf` command
 - [ ] Automated: test
-- [ ] Automated: watch and run `compileWebVie.js` file
+- [ ] Automated: watch and run `compileWebview.js` file
 - [ ] Refactoring
 
 ## Demo
@@ -38,7 +38,7 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 
 ## Development
 ```
-node tool/compileWebVie.js && npm run compile
+node tool/compileWebview.js && npm run compile
 ```
 
 ## Reference
