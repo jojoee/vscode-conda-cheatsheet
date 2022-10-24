@@ -1,34 +1,77 @@
 import * as vscode from 'vscode'
 import * as path from 'path'
 import * as fs from 'fs'
+
 const CONDA_CHEATSHEET_URL: string = 'https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html'
+
+function getPdfDisposable (
+  context: vscode.ExtensionContext,
+  fileNames: string[],
+  name: string,
+  displayName: string
+) {
+  // set panel
+  const assetPath = path.join(context.extensionPath, 'asset')
+
+  const panel = vscode.window.createWebviewPanel(
+    name,
+    displayName,
+    vscode.ViewColumn.Beside, {
+      localResourceRoots: [vscode.Uri.file(assetPath)],
+      enableScripts: false
+    }
+  )
+
+  // set content
+  let html: string = ''
+  for (const fileName of fileNames) {
+    const filePath = vscode.Uri.file(path.join(assetPath, fileName)).with({ scheme: 'vscode-resource' })
+    html += `<img src="${filePath}" />`
+  }
+  panel.webview.html = html
+}
 
 export function activate (context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "conda-cheatsheet" is now active!')
 
-  const pdfDisposable = vscode.commands.registerCommand('extension.openPdf', () => {
-    // set panel
-    const assetPath = path.join(context.extensionPath, 'asset')
+  const pdfDisposable46 = vscode.commands.registerCommand('extension.openPdf46', () => {
     const fileNames = [
-      'conda-cheatsheet-4.6-1.jpg',
-      'conda-cheatsheet-4.6-2.jpg'
+      'conda-4.6-1.jpg',
+      'conda-4.6-2.jpg'
     ]
-    const panel = vscode.window.createWebviewPanel(
-      'condaCheatsheetPdf',
-      'Conda Cheatsheet PDF',
-      vscode.ViewColumn.Beside, {
-        localResourceRoots: [vscode.Uri.file(assetPath)],
-        enableScripts: false
-      }
-    )
+    const name = 'condaCheatsheetPdf46'
+    const displayName = 'Conda Cheatsheet PDF (4.6)'
+    getPdfDisposable(context, fileNames, name, displayName)
+  })
 
-    // set content
-    let html: string = ''
-    for (const fileName of fileNames) {
-      const filePath = vscode.Uri.file(path.join(assetPath, fileName)).with({ scheme: 'vscode-resource' })
-      html += `<img src="${filePath}" />`
-    }
-    panel.webview.html = html
+  const pdfDisposable412 = vscode.commands.registerCommand('extension.openPdf412', () => {
+    const fileNames = [
+      'conda-4.12-1.jpg',
+      'conda-4.12-2.jpg'
+    ]
+    const name = 'condaCheatsheetPdf412'
+    const displayName = 'Conda Cheatsheet PDF (4.12)'
+    getPdfDisposable(context, fileNames, name, displayName)
+  })
+
+  const pdfDisposable414 = vscode.commands.registerCommand('extension.openPdf414', () => {
+    const fileNames = [
+      'conda-4.14-1.jpg',
+      'conda-4.14-2.jpg'
+    ]
+    const name = 'condaCheatsheetPdf414'
+    const displayName = 'Conda Cheatsheet PDF (4.14)'
+    getPdfDisposable(context, fileNames, name, displayName)
+  })
+
+  const pdfDisposable = vscode.commands.registerCommand('extension.openPdf414', () => {
+    const fileNames = [
+      'conda-4.14-1.jpg',
+      'conda-4.14-2.jpg'
+    ]
+    const name = 'condaCheatsheetPdf'
+    const displayName = 'Conda Cheatsheet PDF (latest)'
+    getPdfDisposable(context, fileNames, name, displayName)
   })
 
   const websiteDisposable = vscode.commands.registerCommand('extension.openWebsite', () => {
@@ -87,10 +130,13 @@ export function activate (context: vscode.ExtensionContext) {
     )
   })
 
+  context.subscriptions.push(pdfDisposable46)
+  context.subscriptions.push(pdfDisposable412)
+  context.subscriptions.push(pdfDisposable414)
   context.subscriptions.push(pdfDisposable)
   context.subscriptions.push(websiteDisposable)
   context.subscriptions.push(webviewDisposable)
 }
 
 // this method is called when your extension is deactivated
-export function deactivate () {}
+export function deactivate () { }
