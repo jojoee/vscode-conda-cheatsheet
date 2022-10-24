@@ -38,6 +38,12 @@ A Visual Studio Code extension that lets you open Conda cheatsheet inside the ed
 ## Development
 ```
 node tool/compileWebview.js && npm run compile
+
+npm run compile
+npm run test
+npm run deploy
+vsce login jojoee
+vsce publish
 ```
 
 ## Reference
