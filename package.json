@@ -2,7 +2,7 @@
   "name": "conda-cheatsheet",
   "displayName": "Conda Cheatsheet",
   "description": "Open Conda cheatsheet inside the editor",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "engines": {
     "vscode": "^1.26.0"
   },
@@ -12,6 +12,9 @@
   ],
   "activationEvents": [
     "onCommand:extension.openPdf",
+    "onCommand:extension.openPdf46",
+    "onCommand:extension.openPdf412",
+    "onCommand:extension.openPdf414",
     "onCommand:extension.openWebsite",
     "onCommand:extension.openWebview"
   ],

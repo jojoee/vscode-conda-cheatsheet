@@ -10,3 +10,6 @@ out
 
 # misc
 .pdf
+
+# lock
+package-lock.json
