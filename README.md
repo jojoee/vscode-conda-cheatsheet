@@ -1,7 +1,6 @@
 # [Conda Cheatsheet](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
 A Visual Studio Code extension that lets you open Conda cheatsheet inside the editor.
 
-[![Travis](https://img.shields.io/travis/jojoee/vscode-conda-cheatsheet.svg)](https://travis-ci.org/jojoee/vscode-conda-cheatsheet)
 [![Version](https://vsmarketplacebadge.apphb.com/version/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/jojoee.conda-cheatsheet.svg)](https://marketplace.visualstudio.com/items?itemName=jojoee.conda-cheatsheet)
