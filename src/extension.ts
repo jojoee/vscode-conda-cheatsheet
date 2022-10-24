@@ -64,7 +64,7 @@ export function activate (context: vscode.ExtensionContext) {
     getPdfDisposable(context, fileNames, name, displayName)
   })
 
-  const pdfDisposable = vscode.commands.registerCommand('extension.openPdf414', () => {
+  const pdfDisposable = vscode.commands.registerCommand('extension.openPdf', () => {
     const fileNames = [
       'conda-4.14-1.jpg',
       'conda-4.14-2.jpg'

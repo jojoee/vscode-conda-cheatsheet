@@ -25,7 +25,19 @@
     "commands": [
       {
         "command": "extension.openPdf",
-        "title": "Conda Cheatsheet: PDF"
+        "title": "Conda Cheatsheet: PDF (latest)"
+      },
+      {
+        "command": "extension.openPdf46",
+        "title": "Conda Cheatsheet: PDF (4.6)"
+      },
+      {
+        "command": "extension.openPdf412",
+        "title": "Conda Cheatsheet: PDF (4.12)"
+      },
+      {
+        "command": "extension.openPdf414",
+        "title": "Conda Cheatsheet: PDF (4.14)"
       },
       {
         "command": "extension.openWebsite",
